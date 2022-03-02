@@ -25,7 +25,7 @@ apt-get --purge autoremove -y
 apt-get autoclean
 
 ## Install ubuntu packages
-apt-get install -y vim git openssh-server curl trash-cli git-extras thunderbird network-manager-vpnc-gnome deja-dup usb-creator-gtk gparted
+apt-get install -y vim git openssh-server curl trash-cli git-extras thunderbird network-manager-vpnc-gnome deja-dup usb-creator-gtk gparted htop
 
 if [ "$?" -eq "1" ]; then
     echo "The apt-get install failed"
