@@ -12,9 +12,6 @@ fi
 
 conda_path=$1
 
-echo "I am exiting the script for the following reason: this config files might need you to configure first a VPN or any other stuff since your config files might execute ssh in protected networks. Once
-you are sure you have make all this set up that is hard do do within a general script (you might have different VPNs etc) then remove this sentence and the following exit. Also remember to sudo apt-get install git before running this since you are likely to have your set up in a github repository."
-exit 1
 
 apt-get autoremove -y
 apt-get update
@@ -25,7 +22,7 @@ apt-get --purge autoremove -y
 apt-get autoclean
 
 ## Install ubuntu packages
-apt-get install -y vim git openssh-server curl trash-cli git-extras thunderbird network-manager-vpnc-gnome deja-dup usb-creator-gtk gparted htop
+apt-get install -y vim git openssh-server curl trash-cli git-extras thunderbird network-manager-vpnc-gnome deja-dup usb-creator-gtk gparted htop libreoffice
 
 if [ "$?" -eq "1" ]; then
     echo "The apt-get install failed"
