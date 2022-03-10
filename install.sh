@@ -79,16 +79,16 @@ if [ "$?" -eq "1" ]; then
     exit 1
 fi
 
-## Install anaconda
-curl -o /tmp/Anaconda3-2021.11-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh   
+## Install miniconda
+curl -o /tmp/Miniconda3-py39_4.11.0-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-py39_4.11.0-Linux-x86_64.sh
 
 if ! sha256sum -c ./sha256sum_check.md5; then
     echo "Anaconda checksum failed." 
     exit 1
 fi
 
-chmod +x /tmp/Anaconda3-2021.11-Linux-x86_64.sh
-bash /tmp/Anaconda3-2021.11-Linux-x86_64.sh -b -p $conda_path
+chmod +x /tmp/Miniconda3-py39_4.11.0-Linux-x86_64.sh
+bash /tmp/Miniconda3-py39_4.11.0-Linux-x86_64.sh -b -p $conda_path
 
 if [ "$?" -eq "1" ]; then
     echo "Installing conda failed"
