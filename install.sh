@@ -79,6 +79,18 @@ if [ "$?" -eq "1" ]; then
     exit 1
 fi
 
+# typora
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo apt-get update
+sudo apt-get install typora -y
+
+if [ "$?" -eq "1" ]; then
+    echo "Installing spotify failed"
+    exit 1
+fi
+
+
 ## Install miniconda
 curl -o /tmp/Miniconda3-py39_4.11.0-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-py39_4.11.0-Linux-x86_64.sh
 
